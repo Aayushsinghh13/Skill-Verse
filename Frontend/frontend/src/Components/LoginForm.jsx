@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
-import './LoginForm.css';
+import './Form.css';
 
 export default function LoginForm({ onSwitchToSignup }) {
   const [email, setEmail] = useState("")
@@ -121,7 +121,7 @@ export default function LoginForm({ onSwitchToSignup }) {
             <span className="text-lg">🐙</span>
             <span className="text-sm font-semibold text-foreground group-hover:text-black">GitHub</span>
           </button>
-</div>
+        </div>
 
       </div>
 

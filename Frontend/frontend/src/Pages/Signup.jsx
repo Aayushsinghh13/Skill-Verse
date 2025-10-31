@@ -17,7 +17,7 @@ export default function Signup() {
             <span className="text-[#64748B]">Already have an account?</span>
             <Link
               to="/login"
-              className="border-2 border-[#d4af37] text-[#d4af37] px-6 py-2 rounded-lg font-semibold hover:bg-[#d4af37] hover:text-[#0A0A0A] transition"
+              className="bg-[#d4af37] text-[#0A0A0A] px-6 py-2 rounded-lg font-semibold hover:bg-[#e5c158] transition"
             >
               Login
             </Link>

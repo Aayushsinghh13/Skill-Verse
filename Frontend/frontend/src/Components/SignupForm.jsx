@@ -1,6 +1,7 @@
 
 import { useState } from "react"
 import { Mail, Lock, User, Eye, EyeOff, Check } from "lucide-react"
+import './Form.css';
 
 export default function SignupForm({ onSwitchToLogin }) {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ export default function SignupForm({ onSwitchToLogin }) {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [passwordStrength, setPasswordStrength] = useState(0)
+  const [isSelected, setIsSelected] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -60,7 +62,11 @@ export default function SignupForm({ onSwitchToLogin }) {
       </div>
 
       {/* Form Card */}
-      <div className="bg-card border border-border rounded-lg p-8 space-y-6 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:scale-105 hover:border-primary">
+      <div
+        className={`bg-card border border-[#d4af37] rounded-lg p-8 shadow-lg transition-all duration-500 ${isSelected ? "card-selected border-glow" : "card-glow"}`}
+        onMouseEnter={() => setIsSelected(true)}
+        onMouseLeave={() => setIsSelected(false)}
+      >
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Full Name Input */}
           <div className="space-y-2">
@@ -207,31 +213,28 @@ export default function SignupForm({ onSwitchToLogin }) {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-primary text-primary-foreground font-semibold py-2 rounded-lg hover:opacity-90 transition disabled:opacity-50"
+            className="bg-[#d4af37] text-black font-bold px-40 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
           >
             {isLoading ? "Creating account..." : "Sign Up"}
           </button>
         </form>
 
         {/* Divider */}
-        <div className="relative">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-border"></div>
-          </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-card text-secondary">Or sign up with</span>
-          </div>
+        <div className="flex items-center justify-center my-6">
+          <div className="flex-1 border-t border-border"></div>
+          <span className="mx-3 text-sm text-secondary bg-card px-2 z-10">Or sign up with</span>
+          <div className="flex-1 border-t border-border"></div>
         </div>
 
         {/* Social Signup */}
         <div className="grid grid-cols-2 gap-3">
-          <button className="flex items-center justify-center space-x-2 bg-background border border-border rounded-lg py-2 hover:bg-card transition">
+          <button className="flex items-center justify-center space-x-2 bg-background border border-border rounded-lg py-2 transition-all duration-300 hover:bg-[#d4af37] hover:text-black hover:border-[#d4af37]">
             <span className="text-lg">🔵</span>
-            <span className="text-sm text-foreground">Google</span>
+            <span className="text-sm font-semibold text-foreground group-hover:text-black">Google</span>
           </button>
-          <button className="flex items-center justify-center space-x-2 bg-background border border-border rounded-lg py-2 hover:bg-card transition">
+          <button className="flex items-center justify-center space-x-2 bg-background border border-border rounded-lg py-2 transition-all duration-300 hover:bg-[#d4af37] hover:text-black hover:border-[#d4af37]">
             <span className="text-lg">🐙</span>
-            <span className="text-sm text-foreground">GitHub</span>
+            <span className="text-sm font-semibold text-foreground group-hover:text-black">GitHub</span>
           </button>
         </div>
       </div>
