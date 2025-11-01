@@ -57,7 +57,7 @@ export default function SignupForm({ onSwitchToLogin }) {
     <div className="space-y-6">
       {/* Header */}
       <div className="text-center space-y-2">
-        <h1 className="text-4xl font-bold text-primary">Skill Verse</h1>
+        <h1 className="text-4xl font-bold text-primary">Skill <span className="text-[#d4af37]">Verse</span></h1>
         <p className="text-secondary text-sm">Start your learning adventure today</p>
       </div>
 

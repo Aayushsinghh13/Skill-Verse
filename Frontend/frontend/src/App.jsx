@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 import Login from './Pages/Login'
 import Signup from './Pages/Signup'
 import Home from './Pages/Home'
+import SkillSwapPage from './Pages/SkillSwap';
 // import Link from "next/link"
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/requests" element={<SkillSwapPage/>} />
       </Routes>
   )
 }

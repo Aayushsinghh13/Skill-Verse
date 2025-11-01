@@ -19,6 +19,9 @@ export default function Home() {
             <a href="#features" className="text-[#E5E7EB] hover:text-[#d4af37] transition">
               Features
             </a>
+            <Link to="/requests" className="text-[#E5E7EB] hover:text-[#d4af37] transition">
+              swap-request
+            </Link>
             <a href="#how-it-works" className="text-[#E5E7EB] hover:text-[#d4af37] transition">
               How It Works
             </a>
